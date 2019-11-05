@@ -70,4 +70,8 @@ public class UserDao {
         String sql="delete from sys_user where id = ?";
         template.update(sql,id);
     }
+
+    //add update delete DML语言都是 update()
+    //select 根据返回的结果分为单查询和多查询 DDL语言还需要后面传递反射的实体类对象才能有效
+    //单返回结果的查询就用queryForObject()，多返回的结果用query()即可
 }
